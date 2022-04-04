@@ -19,7 +19,12 @@ mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
 touch /etc/squid/blacklist.acl
 wget -O /etc/squid/squid.conf  https://raw.githubusercontent.com/nogayhan/squid/master/squid_centos.conf
 
-iptables -I INPUT -p tcp --dport 3128,3129,3130,3131,3132,3133,3134,3135,3136,3137,3138,3139,3140 -j ACCEPT
+iptables -I INPUT -p tcp --dport 3128 -j ACCEPT
+iptables -I INPUT -p tcp --dport 3129 -j ACCEPT
+iptables -I INPUT -p tcp --dport 3130 -j ACCEPT
+iptables -I INPUT -p tcp --dport 3131 -j ACCEPT
+iptables -I INPUT -p tcp --dport 3132 -j ACCEPT
+iptables -I INPUT -p tcp --dport 3133 -j ACCEPT
 #/sbin/iptables-save
 /sbin/service iptables save
 
